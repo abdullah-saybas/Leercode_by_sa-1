@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> dappmap;
+        vector<int> dappp;
+
+        for(int i=0; i<nums.size(); i++ ){
+            int hulk =target - nums[i];
+
+           if( dappmap.find(hulk) != dappmap.end()){
+               dappp.push_back(dappmap.find(hulk)->second);
+               dappp.push_back(i);
+               break;
+           }
+           dappmap[nums[i]] = i;
+
+        }
+        return dappp;
+        
+    }
+};
